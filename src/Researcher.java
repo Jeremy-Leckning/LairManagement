@@ -1,0 +1,29 @@
+/**
+ * @author Jeremy
+ *
+ */
+
+public class Researcher extends Minion {
+
+	public Researcher(String newMinionId, String newGivenName, String newFamilyName) {
+		super(newMinionId, newGivenName, newFamilyName);
+		minionId = newMinionId;
+		givenName = newGivenName;
+		familyName = newFamilyName;
+	}
+
+	public Researcher(String newMinionId) {
+		super(newMinionId);
+		minionId = newMinionId;
+	}
+	
+	public int monthlyPay() {
+		if (SkillsCollection.size() >= 3){
+			return 10000;
+		}
+		else {
+			return 5000;
+		}
+	}
+
+}
