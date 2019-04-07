@@ -24,6 +24,9 @@ public class LairLocation {
 	}
 	
 	public void assignTeam(Team team) {
+		if (!isValidTeam(team)){
+			throw new Error("Invalid Team");
+		}
 		minions = team;
 	}
 	
@@ -48,4 +51,34 @@ public class LairLocation {
 		return total_pay;
 	}
 
+	public boolean isValidTeam(Team team) {
+		if (team.minionList().size() < 1){
+			return false;
+		}
+		
+		int numSupport = 0;
+		int numResearcher = 0;
+		for (int i = 0; i < team.minionList().size(); i++) {
+			if (team.minionList().get(i) instanceof Researcher) {
+				numResearcher++;
+			}
+			else if (team.minionList().get(i) instanceof Support_staff) {
+				numSupport++;
+			}
+		}
+		if (numResearcher > numSupport){
+			return false;
+		}
+		
+		int num = 0;
+		for (MinionSkill skill : MinionSkill.values()) { 
+			if (neededSkill.get(skill) != null) {
+			    num = neededSkill.get(skill);
+			    if (team.numberSkill(skill) < num) {
+			    	return false;
+			    }
+			}
+		}
+		return true;	
+	}
 }

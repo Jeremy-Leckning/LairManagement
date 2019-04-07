@@ -23,7 +23,8 @@ public class Lair {
 	
 	public void createLocation() {
 		HashMap<MinionSkill, Integer> hash_map = new HashMap<MinionSkill, Integer>();
-		hash_map.put(MinionSkill.SCUBA, 1);
+		hash_map.put(MinionSkill.SCUBA, 2);
+		hash_map.put(MinionSkill.ESPIONAGE, 1);
 		
 		LairLocations = new LairLocation[4];
 		LairLocations[0] = new LairLocation("Lava pits", "Full of lava.", hash_map);
@@ -74,9 +75,11 @@ public class Lair {
 		minion3.addSkill(MinionSkill.ESPIONAGE);
 		minion3.addSkill(MinionSkill.ROCKETRY);
 		minion3.addSkill(MinionSkill.PSYCHIATRY);
+		minion3.addSkill(MinionSkill.SCUBA);
 	
-//		// $3500
+//		// $4000
 		minion4.addSkill(MinionSkill.ESPIONAGE);
+		minion4.addSkill(MinionSkill.SCUBA);
 		
 		Team team1 = new Team();
 		Team team2 = new Team();
@@ -85,9 +88,11 @@ public class Lair {
 		
 		team1.addMinion(minion1);
 		team1.addMinion(minion3);
-		team2.addMinion(minion1);
-		team3.addMinion(minion2);
+		team2.addMinion(minion3);
+		team2.addMinion(minion4);
 		team3.addMinion(minion4);
+		team3.addMinion(minion2);
+		team3.addMinion(minion3);
 		team4.addMinion(minion3);
 		team4.addMinion(minion4);
 		
