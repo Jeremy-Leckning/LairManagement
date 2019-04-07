@@ -11,10 +11,38 @@ public abstract class Minion {
 	protected Collection<MinionSkill> SkillsCollection = new HashSet<MinionSkill>();
 
 	public Minion(String newMinionId){
+		if (newMinionId.length() != 7) {
+			throw new IllegalArgumentException("ID must contain 7 characters");
+		}
+		
+		 if (!Character.isLetter(newMinionId.charAt(0)) )  {
+			 throw new IllegalArgumentException("First Character must be a letter between A-Z");
+		 }
+		
+		for (int i = 1; i < newMinionId.length(); i++) {
+			if (!Character.isDigit(newMinionId.charAt(i))) {
+				throw new IllegalArgumentException("Characters from index 1 to 6 must be integers");
+			}
+		}
+		
 		minionId = newMinionId;
 	}
 	
 	public Minion(String newMinionId, String newGivenName, String newFamilyName){
+		if (newMinionId.length() != 7) {
+			throw new IllegalArgumentException("ID must contain 7 characters");
+		}
+		
+		 if (!Character.isLetter(newMinionId.charAt(0)) )  {
+			 throw new IllegalArgumentException("First Character must be a letter between A-Z");
+		 }
+		
+		for (int i = 1; i < newMinionId.length(); i++) {
+			if (!Character.isDigit(newMinionId.charAt(i))) {
+				throw new IllegalArgumentException("Characters from index 1 to 6 must be integers");
+			}
+		}
+		
 		minionId = newMinionId;
 		givenName = newGivenName;
 		familyName = newFamilyName;

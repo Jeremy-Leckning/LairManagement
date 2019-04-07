@@ -7,7 +7,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// Testing Commit Git
 
 public class Lair {
 	private LairLocation[] LairLocations;
@@ -58,7 +57,6 @@ public class Lair {
 		LairLocations[3].assignMinion(minion3);
 		LairLocations[3].assignMinion(minion4);
 		
-		// Week 4
 		// $10000
 		minion1.addSkill(MinionSkill.PSYCHOLOGY);	
 		minion1.addSkill(MinionSkill.ESPIONAGE);
@@ -68,13 +66,13 @@ public class Lair {
 		minion2.addSkill(MinionSkill.CRYPTOGRAPHY);
 		minion2.addSkill(MinionSkill.PSYCHIATRY);
 		
-		// $5000
+//		// $5000
 		minion3.addSkill(MinionSkill.PSYCHOLOGY);	
 		minion3.addSkill(MinionSkill.ESPIONAGE);
 		minion3.addSkill(MinionSkill.ROCKETRY);
 		minion3.addSkill(MinionSkill.PSYCHIATRY);
-		
-		// $3500
+	
+//		// $3500
 		minion4.addSkill(MinionSkill.ESPIONAGE);
 	}
 	
