@@ -1,3 +1,5 @@
+import java.util.HashMap;
+
 /**
  * @author Jeremy
  *
@@ -8,10 +10,13 @@ public class LairLocation {
 	private String name;
 	private String description;
 	private Team minions;
+	// Used HashMap as it is the most efficient and order of elements does not matter here.
+	private HashMap<MinionSkill, Integer> neededSkill = new HashMap<MinionSkill, Integer>();
 	
-	public LairLocation(String newName, String newDescription) {
+	public LairLocation(String newName, String newDescription, HashMap<MinionSkill, Integer>hash_map) {
 		name = newName;
 		description = newDescription;
+		neededSkill.putAll(hash_map);
 	}
 	
 	public String description() {

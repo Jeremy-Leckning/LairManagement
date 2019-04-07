@@ -6,6 +6,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashMap;
 
 
 public class Lair {
@@ -21,11 +22,14 @@ public class Lair {
 	}
 	
 	public void createLocation() {
+		HashMap<MinionSkill, Integer> hash_map = new HashMap<MinionSkill, Integer>();
+		hash_map.put(MinionSkill.SCUBA, 1);
+		
 		LairLocations = new LairLocation[4];
-		LairLocations[0] = new LairLocation("Lava pits", "Full of lava.");
-		LairLocations[1] = new LairLocation("SuperComputer Rooms", "Full of superComputers.");
-		LairLocations[2] = new LairLocation("Dark Room", "Full with evil minions.");
-		LairLocations[3] = new LairLocation("Boardroom", "Where we plot world domination.");
+		LairLocations[0] = new LairLocation("Lava pits", "Full of lava.", hash_map);
+		LairLocations[1] = new LairLocation("SuperComputer Rooms", "Full of superComputers.", hash_map);
+		LairLocations[2] = new LairLocation("Dark Room", "Full with evil minions.", hash_map);
+		LairLocations[3] = new LairLocation("Boardroom", "Where we plot world domination.", hash_map);
 	}
 	
 	public void displayLocation() {
