@@ -13,6 +13,10 @@ public class Lair {
 	private LairLocation[] LairLocations;
 	
 	public void printStatus() {
+		/*
+		 * Prints the main window and create the instance locations and minions
+		 * @return None
+		 */
 		System.out.println("Welcome to the Supervillain's Lair Management System.");
 		System.out.println("");
 		createLocation();
@@ -34,6 +38,10 @@ public class Lair {
 	}
 	
 	public void displayLocation() {
+		/*
+		 * Displays Location descriptions along with the assigned minions
+		 * @return: None
+		 */
 		for (int i = 0; i < LairLocations.length; i++) {
 			System.out.println(LairLocations[i].description());
 			System.out.println("Assigned Minions:");
@@ -43,6 +51,11 @@ public class Lair {
 	}
 	
 	public void createMinions() {
+		/*
+		 * Creates team of minions with their skills and assigns them to locations
+		 * @return: None
+		 */
+		
 //		Researcher minion1 = new Researcher(readString("ID: "));
 //		minion1.setGivenName(readString("givenName: "));
 //		minion1.setFamilyName(readString("FamilyName: "));
@@ -104,6 +117,9 @@ public class Lair {
 	
 	
 	private String readString(String prompt) {
+		/*
+		 * Input Read string
+		 */
 		System.out.print(prompt);
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String s = null;

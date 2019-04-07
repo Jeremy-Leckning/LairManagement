@@ -20,10 +20,19 @@ public class LairLocation {
 	}
 	
 	public String description() {
+		/*
+		 * Returns a string description of minion containing name and location description
+		 * @return: String description of LairLocation
+		 */
 		return (name + ": " + description);
 	}
 	
 	public void assignTeam(Team team) {
+		/*
+		 * Assigns a team to a location
+		 * @param team: team to be assigned
+		 * @return: None
+		 */
 		if (!isValidTeam(team)){
 			throw new Error("Invalid Team");
 		}
@@ -31,6 +40,10 @@ public class LairLocation {
 	}
 	
 	public String getMinions() {
+		/*
+		 * Returns a string of the minions present in that location along with their description
+		 * @return: string of minions + description
+		 */
 		String minionString = "";
 		for (int i = 0; i < minions.minionList().size(); i++) {
 			if (i < minions.minionList().size()-1){
@@ -44,6 +57,10 @@ public class LairLocation {
 	}
 	
 	public int payRoll() {
+		/*
+		 * Calculates the total monthly pay of all minions in that location
+		 * @return: The total monthly pay for that location
+		 */
 		int total_pay = 0;
 		for (int i = 0; i < minions.minionList().size(); i++) {
 			total_pay += minions.minionList().get(i).monthlyPay();
@@ -52,6 +69,11 @@ public class LairLocation {
 	}
 
 	public boolean isValidTeam(Team team) {
+		/*
+		 * Checks whether the team of minions is valid as specified per assignment sheet
+		 * @param team: team to be checked
+		 * @return: True if valid, false otherwise
+		 */
 		if (team.minionList().size() < 1){
 			return false;
 		}

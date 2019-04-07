@@ -14,6 +14,10 @@ public class Support_staff extends Minion {
 	}
 	
 	int monthlyPay() {
+		/*
+		 * Calculates the monthly pay of the minion
+		 * @return: Monthly Pay
+		 */
 		return 3000 + SkillsCollection.size() * 500;
 	}
 

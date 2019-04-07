@@ -5,7 +5,9 @@
 public class LairDriver {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		/*
+		 * Main Driver class
+		 */
 		Lair lairOne = new Lair();
 		lairOne.printStatus();
 	}

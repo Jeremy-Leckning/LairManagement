@@ -14,6 +14,10 @@ public class Researcher extends Minion {
 	}
 	
 	public int monthlyPay() {
+		/*
+		 * Calculates the monthly pay of the minion
+		 * @return: Monthly Pay
+		 */
 		if (SkillsCollection.size() >= 3){
 			return 10000;
 		}
