@@ -38,24 +38,23 @@ public class Lair {
 	}
 	
 	public void createMinions() {
-		Researcher minion1 = new Researcher(readString("ID: "));
-		minion1.setGivenName(readString("givenName: "));
-		minion1.setFamilyName(readString("FamilyName: "));
-		System.out.println("");
-		Researcher minion2 = new Researcher(readString("ID: "), readString("givenName: "), readString("FamilyName: "));
-		System.out.println("");
-		Support_staff minion3 = new Support_staff(readString("ID: "), readString("givenName: "), readString("FamilyName: "));
-		System.out.println("");
-		Support_staff minion4 = new Support_staff(readString("ID: "), readString("givenName: "), readString("FamilyName: "));
-		System.out.println("");
+//		Researcher minion1 = new Researcher(readString("ID: "));
+//		minion1.setGivenName(readString("givenName: "));
+//		minion1.setFamilyName(readString("FamilyName: "));
+//		System.out.println("");
+//		Researcher minion2 = new Researcher(readString("ID: "), readString("givenName: "), readString("FamilyName: "));
+//		System.out.println("");
+//		Support_staff minion3 = new Support_staff(readString("ID: "), readString("givenName: "), readString("FamilyName: "));
+//		System.out.println("");
+//		Support_staff minion4 = new Support_staff(readString("ID: "), readString("givenName: "), readString("FamilyName: "));
+//		System.out.println("");
 		
-		LairLocations[0].assignMinion(minion1);
-		LairLocations[0].assignMinion(minion3);
-		LairLocations[1].assignMinion(minion1);
-		LairLocations[2].assignMinion(minion2);
-		LairLocations[2].assignMinion(minion4);
-		LairLocations[3].assignMinion(minion3);
-		LairLocations[3].assignMinion(minion4);
+		Minion minion1 = new Researcher("A123456");
+		minion1.setGivenName("Mini");
+		minion1.setFamilyName("Me");
+		Minion minion2 = new Researcher("B789456", "Donna", "Matrix");
+		Minion minion3 = new Support_staff("C789123", "Pyne", "Okleen");
+		Minion minion4 = new Support_staff("D874563", "Domestos", "McBleach");
 		
 		// $10000
 		minion1.addSkill(MinionSkill.PSYCHOLOGY);	
@@ -74,6 +73,24 @@ public class Lair {
 	
 //		// $3500
 		minion4.addSkill(MinionSkill.ESPIONAGE);
+		
+		Team team1 = new Team();
+		Team team2 = new Team();
+		Team team3 = new Team();
+		Team team4 = new Team();
+		
+		team1.addMinion(minion1);
+		team1.addMinion(minion3);
+		team2.addMinion(minion1);
+		team3.addMinion(minion2);
+		team3.addMinion(minion4);
+		team4.addMinion(minion3);
+		team4.addMinion(minion4);
+		
+		LairLocations[0].assignTeam(team1);
+		LairLocations[1].assignTeam(team2);
+		LairLocations[2].assignTeam(team3);
+		LairLocations[3].assignTeam(team4);
 	}
 	
 	

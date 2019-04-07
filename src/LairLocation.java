@@ -2,12 +2,12 @@
  * @author Jeremy
  *
  */
-import java.util.ArrayList;
+
 
 public class LairLocation {
 	private String name;
 	private String description;
-	private ArrayList<Minion> minions = new ArrayList<Minion>(); 
+	private Team minions;
 	
 	public LairLocation(String newName, String newDescription) {
 		name = newName;
@@ -18,18 +18,18 @@ public class LairLocation {
 		return (name + ": " + description);
 	}
 	
-	public void assignMinion(Minion minion) {
-		minions.add(minion);
+	public void assignTeam(Team team) {
+		minions = team;
 	}
 	
 	public String getMinions() {
 		String minionString = "";
-		for (int i = 0; i < minions.size(); i++) {
-			if (i < minions.size()-1){
-			minionString += minions.get(i).description() + "\n";
+		for (int i = 0; i < minions.minionList().size(); i++) {
+			if (i < minions.minionList().size()-1){
+			minionString += minions.minionList().get(i).description() + "\n";
 			}
 			else {
-				minionString += minions.get(i).description();
+				minionString += minions.minionList().get(i).description();
 			}
 		}
 		return minionString;
@@ -37,8 +37,8 @@ public class LairLocation {
 	
 	public int payRoll() {
 		int total_pay = 0;
-		for (int i = 0; i < minions.size(); i++) {
-			total_pay += minions.get(i).monthlyPay();
+		for (int i = 0; i < minions.minionList().size(); i++) {
+			total_pay += minions.minionList().get(i).monthlyPay();
 		}
 		return total_pay;
 	}
