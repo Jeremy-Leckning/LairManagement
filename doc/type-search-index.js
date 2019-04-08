@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"Lair"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"Lair"},{"p":"<Unnamed>","l":"LairDriver"},{"p":"<Unnamed>","l":"LairLocation"},{"p":"<Unnamed>","l":"Minion"},{"p":"<Unnamed>","l":"MinionSkill"},{"p":"<Unnamed>","l":"Researcher"},{"p":"<Unnamed>","l":"Support_staff"},{"p":"<Unnamed>","l":"Team"}]
