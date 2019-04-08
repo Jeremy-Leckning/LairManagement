@@ -13,7 +13,7 @@ public class Lair {
 	private LairLocation[] LairLocations;
 	
 	public void printStatus() {
-		/*
+		/**
 		 * Prints the main window and create the instance locations and minions
 		 * @return None
 		 */
@@ -38,7 +38,7 @@ public class Lair {
 	}
 	
 	public void displayLocation() {
-		/*
+		/**
 		 * Displays Location descriptions along with the assigned minions
 		 * @return: None
 		 */
@@ -51,7 +51,7 @@ public class Lair {
 	}
 	
 	public void createMinions() {
-		/*
+		/**
 		 * Creates team of minions with their skills and assigns them to locations
 		 * @return: None
 		 */
@@ -117,7 +117,7 @@ public class Lair {
 	
 	
 	private String readString(String prompt) {
-		/*
+		/**
 		 * Input Read string
 		 */
 		System.out.print(prompt);

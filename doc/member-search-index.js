@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"<Unnamed>","c":"Lair","l":"createLocation()"},{"p":"<Unnamed>","c":"Lair","l":"createMinions()"},{"p":"<Unnamed>","c":"Lair","l":"displayLocation()"},{"p":"<Unnamed>","c":"Lair","l":"Lair()","url":"%3Cinit%3E()"},{"p":"<Unnamed>","c":"Lair","l":"printStatus()"}]

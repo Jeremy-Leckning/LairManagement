@@ -20,7 +20,7 @@ public class LairLocation {
 	}
 	
 	public String description() {
-		/*
+		/**
 		 * Returns a string description of minion containing name and location description
 		 * @return: String description of LairLocation
 		 */
@@ -28,7 +28,7 @@ public class LairLocation {
 	}
 	
 	public void assignTeam(Team team) {
-		/*
+		/**
 		 * Assigns a team to a location
 		 * @param team: team to be assigned
 		 * @return: None
@@ -40,7 +40,7 @@ public class LairLocation {
 	}
 	
 	public String getMinions() {
-		/*
+		/**
 		 * Returns a string of the minions present in that location along with their description
 		 * @return: string of minions + description
 		 */
@@ -57,7 +57,7 @@ public class LairLocation {
 	}
 	
 	public int payRoll() {
-		/*
+		/**
 		 * Calculates the total monthly pay of all minions in that location
 		 * @return: The total monthly pay for that location
 		 */
@@ -69,7 +69,7 @@ public class LairLocation {
 	}
 
 	public boolean isValidTeam(Team team) {
-		/*
+		/**
 		 * Checks whether the team of minions is valid as specified per assignment sheet
 		 * @param team: team to be checked
 		 * @return: True if valid, false otherwise

@@ -14,7 +14,7 @@ public abstract class Minion {
 	protected Collection<MinionSkill> SkillsCollection = new HashSet<MinionSkill>();
 
 	public Minion(String newMinionId){
-		/*
+		/**
 		 * Minion constructor
 		 * @param newMinionId: The id of the minion which will be initialised
 		 * The ID is checked according to the following criterias; must have 7 characters, the first character a letter and the others digits.
@@ -38,7 +38,7 @@ public abstract class Minion {
 	}
 	
 	public Minion(String newMinionId, String newGivenName, String newFamilyName){
-		/*
+		/**
 		 * Minion constructor
 		 * @param newMinionId: The id of the minion which will be initialised
 		 * The ID is checked according to the following criterias; must have 7 characters, the first character a letter and the others digits.
@@ -66,7 +66,7 @@ public abstract class Minion {
 	}
 	
 	public void setGivenName(String newGivenName) {
-		/*
+		/**
 		 * Mutator to set the private attribute givenName a new value
 		 * @param newGivenName: The new value of the private attribute givenName
 		 * @return None
@@ -75,7 +75,7 @@ public abstract class Minion {
 	}
 	
 	public void setFamilyName(String newFamilyName) {
-		/*
+		/**
 		 * Mutator to set the private attribute familyName a new value
 		 * @param newFamilyName: The new value of the private attribute FammilyName
 		 * @return None
@@ -84,7 +84,7 @@ public abstract class Minion {
 	}
 	
 	public String description() {
-		/*
+		/**
 		 * Returns a string description of minion containing ID, givenName and FamilyName
 		 * @return: String description of minion
 		 */
@@ -92,7 +92,7 @@ public abstract class Minion {
 	}
 	
 	public void addSkill(MinionSkill skill) {
-		/*
+		/**
 		 * Adds an object MinionSkill to the HashSet SkillsCollection
 		 * @param skill: Skill to be added to collection
 		 * @return: None
@@ -101,7 +101,7 @@ public abstract class Minion {
 	}
 	
 	public boolean hasSkill(MinionSkill skill) {
-		/*
+		/**
 		 * Checks whether a skill is present in the HashSet SkillsCollection
 		 * @param skill: Skill to be checked
 		 * @return: True if skill present, false otherwise
@@ -110,7 +110,7 @@ public abstract class Minion {
 	}
 	
 	abstract int monthlyPay();
-	/*
+	/**
 	 * abstract method which is defined in the child classes
 	 */
 }

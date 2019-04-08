@@ -14,7 +14,7 @@ public class Researcher extends Minion {
 	}
 	
 	public int monthlyPay() {
-		/*
+		/**
 		 * Calculates the monthly pay of the minion
 		 * @return: Monthly Pay
 		 */

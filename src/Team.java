@@ -5,7 +5,7 @@ import java.util.ArrayList;
  *
  */
 public class Team {
-	/*
+	/**
 	 * Team class which contains a collection of Minion objects
 	 */
 	private ArrayList<Minion> minions = new ArrayList<Minion>(); 
@@ -14,7 +14,7 @@ public class Team {
 	}
 	
 	public void addMinion(Minion newMinion) {
-		/*
+		/**
 		 * Adds a minion to the collection
 		 * @param newMinion: minion to be added
 		 * @return: None
@@ -23,7 +23,7 @@ public class Team {
 	}
 	
 	public void removeMinion(Minion minion) {
-		/*
+		/**
 		 * Removes a minion from the collection
 		 * @param minion: minion to be removed
 		 * @return: None
@@ -32,7 +32,7 @@ public class Team {
 	}
 	
 	public ArrayList<Minion> minionList() {
-		/*
+		/**
 		 * Returns the list of minions in the team
 		 * @return: List of minions
 		 */
@@ -40,7 +40,7 @@ public class Team {
 	}
 	
 	public int numberSkill(MinionSkill skill) {
-		/*
+		/**
 		 * Returns the number of minions having a particular skill in the team
 		 * @param skill: skill that is being checked for
 		 * @return: count of minions having the skill
