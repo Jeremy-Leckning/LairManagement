@@ -100,6 +100,15 @@ public abstract class Minion {
 		SkillsCollection.add(skill);
 	}
 	
+	public void removeSkill(MinionSkill skill) {
+		if (SkillsCollection.contains(skill)){
+			SkillsCollection.remove(skill);
+		}
+		else {
+			throw new Error("Minion does not have this skill");
+		}
+	}
+	
 	public boolean hasSkill(MinionSkill skill) {
 		/**
 		 * Checks whether a skill is present in the HashSet SkillsCollection

@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -10,8 +11,8 @@ public class LairLocation {
 	private String name;
 	private String description;
 	private Team minions;
-	// Used HashMap as it is the most efficient and order of elements does not matter here.
 	private HashMap<MinionSkill, Integer> neededSkill = new HashMap<MinionSkill, Integer>();
+	private ArrayList<Item> itemList = new ArrayList<Item>();
 	
 	public LairLocation(String newName, String newDescription, HashMap<MinionSkill, Integer>hash_map) {
 		name = newName;
@@ -24,7 +25,18 @@ public class LairLocation {
 		 * Returns a string description of minion containing name and location description
 		 * @return: String description of LairLocation
 		 */
-		return (name + ": " + description);
+		String itemDescription = "";
+
+		for (int i = 0; i < itemList.size(); i++) {
+			itemDescription = itemDescription + itemList.get(i).description();
+			if (itemList.size() > 1 && i != itemList.size()-1) {
+				itemDescription = itemDescription + ", ";
+			}
+		}
+		if (itemList.size() == 0) {
+			itemDescription = itemDescription + " No items in this location";
+		}
+		return (name + ": " + description + "\tItems -" + itemDescription);
 	}
 	
 	public void assignTeam(Team team) {
@@ -37,6 +49,20 @@ public class LairLocation {
 			throw new Error("Invalid Team");
 		}
 		minions = team;
+	}
+	
+	public void clearTeam() {
+		Team team0 = new Team();
+		minions = team0;
+		for(int i = 0; i < itemList.size(); i++) {
+			if (itemList.get(i).getSkills().size() >= 2) {
+				itemList.get(i).disable();
+			}
+			else {
+				itemList.remove(i);
+			}
+			
+		}
 	}
 	
 	public String getMinions() {
@@ -102,5 +128,52 @@ public class LairLocation {
 			}
 		}
 		return true;	
+	}
+	
+	public void addItem(Item newItem) {
+		if (isValidLocation(newItem)){
+			itemList.add(newItem);
+		}
+		else {
+			throw new Error("Location does not have required skills");
+		}
+	}
+	
+	public void removeItem(Item item) {
+		if (item.getSkills().size() >= 2) {
+			throw new Error("Can't remove a trap from a location");
+		}
+		else {
+			itemList.remove(item);
+		}
+	}
+	
+	public void moveLocation(Item item, LairLocation newLocation) {
+		if(itemList.contains(item)) {
+			newLocation.addItem(item);
+			removeItem(item);
+		}
+		else {
+			throw new Error("Item not in " + name);
+		}
+
+	}
+	
+	public boolean isValidLocation(Item item) {
+		ArrayList<MinionSkill> requiredSkill = item.getSkills();
+		if (minions.minionList().size() == 0 && requiredSkill.size() > 0) {
+			return false;
+		}
+		for (int i = 0; i < requiredSkill.size(); i++) {
+			MinionSkill skill = requiredSkill.get(i);
+				if (minions.numberSkill(skill) < 1) {
+					return false;
+				}
+		}
+		return true;
+	}
+	
+	public Team getTeam() {
+		return minions;
 	}
 }
